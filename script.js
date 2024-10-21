@@ -1,5 +1,4 @@
-// let display = document.getElementById('display');
-// display.value = 'Means it to be free'
+
 
 let display = document.getElementById('display');
 let buttons = document.querySelectorAll('.button');
@@ -10,8 +9,11 @@ buttons.forEach(button => {
     button.addEventListener('click', () => {
         const value = button.innerText;
 
-        if (value === 'Del') {
-            currentInput = currentInput.slice(0, -1);;
+        if (value === 'AC') {
+            currentInput = '';
+            display.value = '';
+        } else if (value === 'DEL') {
+            currentInput = currentInput.slice(0, -1);
             display.value = currentInput;
         } else if (value === '=') {
             if (currentInput) {
